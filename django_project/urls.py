@@ -27,3 +27,4 @@ urlpatterns = [
   path("globalproblems/",views.create_globalproblem),
   path("globalproblems/update/<id>",views.update_globalproblem),
   path("globalproblems/delete/<id>",views.delete_globalproblem),
+]
