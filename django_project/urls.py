@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+
 from appdoluiz import views
 
 urlpatterns = [
@@ -26,5 +27,3 @@ urlpatterns = [
   path("globalproblems/",views.create_globalproblem),
   path("globalproblems/update/<id>",views.update_globalproblem),
   path("globalproblems/delete/<id>",views.delete_globalproblem),
-  
-]
