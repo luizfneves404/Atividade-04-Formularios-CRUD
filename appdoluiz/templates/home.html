@@ -17,6 +17,9 @@
 </head>
 
 <body>
+  {%if request.user.is_authenticated %} <b>Bem-vindo, {{request.user.username}} </b> <br>
+  <a href="/users/logout">Sair</a>
+  {% endif %}
   <h1 class="big-title">Por que Alinhamento da IA?</h1>
   <p>Sou fascinado por inteligência artificial, especialmente pelo <b style="color: red">problema do alinhamento</b>.
     Mas por que esse interesse tão específico?</p>
