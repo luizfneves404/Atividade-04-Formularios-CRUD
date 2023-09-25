@@ -1,0 +1,30 @@
+<h1>{{action}} problemas globais</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label>
+      Título:
+    </label>
+    <input name="title" value="{{globalproblem.title}}">
+  </div>
+  <div>
+    <label>
+      Descrição:
+    </label>
+    <input name="description" value="{{globalproblem.description}}">
+  </div>
+  <div>
+    <label>
+      Ranking:
+    </label>
+    <input type="number" name="ranking_80000_hours" value="{{globalproblem.ranking_80000_hours}}">
+  </div>
+  <div>
+    <label>
+      Data de publicação: 
+    </label>
+    <input type="date" name="pub_date" value="{{globalproblem.pub_date}}">
+  </div>
+  <input type="submit" value="Registrar">
+</form>

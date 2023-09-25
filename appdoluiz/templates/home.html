@@ -1,0 +1,82 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Luiz Felipe Neves Batista</title>
+  <meta name="description" content="Uma página humorística descrevendo o porquê do meu interesse por alinhamento da IA">
+  <link href="{% static 'appdoluiz/style.css' %}" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Handjet&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+  <h1 class="big-title">Por que Alinhamento da IA?</h1>
+  <p>Sou fascinado por inteligência artificial, especialmente pelo <b style="color: red">problema do alinhamento</b>.
+    Mas por que esse interesse tão específico?</p>
+  <ul>
+    <li>
+      <h2>
+        IA é <i>muito</i> legal
+      </h2>
+    </li>
+    Olha só quanta coisa maneira eu já fiz com IA:
+    <!-- Tabela abaixo! Me dê os pontos extra!!!!! Também fiz os 5 CSS -->
+    <table>
+      <tr>
+        <td><img src={% static 'appdoluiz/ElenaMontrose.jpg' %} width=200></td>
+        <td><img src={% static 'appdoluiz/BarDosRisonhos.jpg' %} width=200></td>
+        <td><img src={% static 'appdoluiz/BecoDoLamento.jpg' %} width=200></td>
+      </tr>
+      <tr>
+        <td><img src={% static 'appdoluiz/Lucille.jpg' %} width=200></td>
+        <td><img src={% static 'appdoluiz/NinesVista.jpg' %} width=200></td>
+        <td><img src={% static 'appdoluiz/SenhorDasSombras.jpg' %} width=200></td>
+      </tr>
+    </table>
+    <p style="font-size: 10px">(Todas essas foram pra uma campanha de <i>RPG</i> que eu mestrei)</p>
+    <li>
+      <h2>
+        Se a gente falhar, o <u>mundo pode literalmente acabar</u>
+      </h2>
+      <p>Parte séria (sem ironia): existe uma chance não nula de o mundo como conhecemos acabar por causa de
+        <i>power-seeking AI</i> ou IA desalinhada em geral.
+      </p>
+      <p>O que me convenceu da escala desse problema foi principalmente a <a
+          href="https://80000hours.org/problem-profiles/artificial-intelligence/" target="_blank">análise realizada pela organização 80000 Hours</a>.</p>
+      <p>Mas li várias outras fontes que também enfatizam riscos globais catastróficos advindos de IA. Para uma <i>overview</i> do problema do alinhamento, você pode ler a <a href="https://pt.wikipedia.org/wiki/Alinhamento_da_intelig%C3%AAncia_artificial" target="_blank">página da wikipédia sobre isso</a>, que eu traduzi e publiquei a partir da wikipédia em inglês (meu nome de usuário é Lufeneba404).
+      </p>
+    </li>
+    <li>
+      <h2 class="digital-font">
+        Quase ninguém sabe desse problema
+      </h2>
+      <p>Infelizmente, é uma questão absurdamente negligenciada no mundo. Estimativas apontam que muito menos de 1000,
+        provavelmente menos de 500 pessoas estão trabalhando <i>full-time</i> no problema do alinhamento. No <span
+          style="color: yellow">Bra</span><span style="color: green">sil</span>, então, esse número não deve passar de
+        10 (números da minha cabeça), haja vista a quase ausência de materiais em português sobre o problema do alinhamento.</p>
+    </li>
+  </ul>
+  <h3>Problemas globais relevantes para escolha profissional</h3>
+  <ol>
+    {% for problem in global_problems %}
+    <li>{{problem.title}} <a href="globalproblems/update/{{problem.id}}">Atualizar</a> <a href="globalproblems/delete/{{problem.id}}">Remover</a></li>
+    {% endfor %}
+  </ol>
+  <a href="globalproblems/">Adicionar problema global</a>
+  <h3>Conecimentos necessários para entrar na área de alinhamento da IA</h3>
+  <ul>
+    {% for skill in ai_alignment_skills %}
+    <li>{{skill.title}} <a href="aiskills/update/{{skill.id}}">Atualizar</a> <a href="aiskills/delete/{{skill.id}}">Remover</a></li>
+    {% endfor %}
+  </ul>
+  <a href="aiskills/">Adicionar habilidade</a>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<h1>{{action}} habilidade para alinhamento de IA</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label>
+      Título:
+    </label>
+    <input name="title" value="{{aiskill.title}}">
+  </div>
+  <div>
+    <label>
+      Dificuldade:
+    </label>
+    <select name="difficulty" value="{{aiskill.difficulty}}">
+      {% for diff in difficulties %}
+      <option value="{{diff.0}}"> {{diff.1}} </option>
+      {% endfor %}
+    </select>
+  </div>
+  <div>
+    <label>
+      Importância:
+    </label>
+    <input type="number" name="importance" value="{{aiskill.importance}}">
+  </div>
+  <div>
+    <label>
+      Como aprender: 
+    </label>
+    <select name="how_to_learn" value="{{aiskill.how_to_learn}}">
+      {% for way in ways_to_learn %}
+      <option value="{{way.0}}"> {{way.1}} </option>
+      {% endfor %}
+    </select>
+  </div>
+  <input type="submit" value="Registrar">
+</form>
+
